@@ -1,4 +1,10 @@
-import { Space } from 'antd'
+import { Space, Modal } from 'antd';
+import { t, Trans } from '@lingui/macro';
+import { useContext, useState } from 'react';
+// import { Link } from 'react-router-dom';
+import { UserContext } from 'contexts/userContext';
+import FormattedAddress from 'components/shared/FormattedAddress';
+
 // Dropdown, Menu
 // import { DownOutlined, UpOutlined } from '@ant-design/icons'
 
@@ -19,27 +25,30 @@ export function NavMenuItem({
   onClick,
 }) {
   const external = route?.startsWith('http')
-  return (
-    <a
-      className="nav-menu-item hover-opacity"
-      href={route}
-      onClick={onClick}
-      {...(external
-        ? {
-            target: '_blank',
-            rel: 'noreferrer',
-          }
-        : {})}
-      style={navMenuItemStyles}
-    >
-      {text}
-    </a>
-  )
+  const props = {
+    className: 'nav-menu-item hover-opacity',
+    onClick: onClick,
+    style: navMenuItemStyles,
+  };
+  if (route) {
+    props.href = route;
+  }
+
+  if (external) {
+    props.target = '_blank';
+    props.rel = 'noreferrer'
+  }
+  return (<a {...props}>
+    {text}
+  </a>);
 }
 
 export function TopLeftNavItems({
   onClickMenuItems,
 }) {
+  const [showContractInfo, setShowContractInfo] =  useState(false);
+  const { contracts } = useContext(UserContext);
+  window.contracts1 = contracts;
   return (
     <Space
       size={'large'}
@@ -53,6 +62,29 @@ export function TopLeftNavItems({
         onClick={onClickMenuItems}
         route={`/${process.env.PUBLIC_URL}#/features`.replace(/\/+/, '/')}
       />
+      <NavMenuItem
+        text="Contracts"
+        onClick={(e) => {
+          setShowContractInfo(true);
+          onClickMenuItems(e);
+        }}
+      />
+      <Modal
+        visible={showContractInfo}
+        cancelText={null}
+        title={t`Contracts Info`}
+        onOk={() => {
+          setShowContractInfo(false);
+        }}
+        onCancel={() => setShowContractInfo(false)}
+      >
+        <div><Trans>factory</Trans>: <FormattedAddress address={contracts?.FeatureFactory?.address} /></div>
+        <div><Trans>router</Trans>: <FormattedAddress address={contracts?.FeatureRouter?.address} /></div>
+        <div><Trans>info</Trans>: <FormattedAddress address={contracts?.FeatureProjectInfo?.address} /></div>
+        <br />
+        <br />
+        <div><Trans>project</Trans>: created by factory, inside factory.</div>
+      </Modal>
     </Space>
   )
 }

@@ -35,20 +35,8 @@ export default function Router() {
         <Route path="/features/:owner">
           <Projects />
         </Route>
-        <Route path="/projects">
+        <Route path="/features">
           <Projects />
-        </Route>
-        <Route path="/v2/create">
-          <Suspense fallback={<Loading />}>
-            <V2Create />
-          </Suspense>
-        </Route>
-        <Route path="/v2/p/:projId">
-          <Suspense fallback={<Loading />}>
-            <V2UserProvider>
-              <V2Dashboard />
-            </V2UserProvider>
-          </Suspense>
         </Route>
         <Route path="/:route">
           <CatchallRedirect />
