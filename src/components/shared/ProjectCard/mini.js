@@ -91,7 +91,7 @@ export default function ProjectCardMini({
         <span style={{ marginRight: 10 }}>#{project.projId}</span>
         {
           (0 === project.lockTime || '0' === project.lockTime) ? (<span>No Lock</span>) : (<span>Lock util {moment.unix(project.lockTime).format('YYYY-MM-DD HH:mm:ss')}</span>)
-        },
+        }
         {/* <span style={{ marginLeft: 10, marginRight: 10 }}>feeRate: {project.feeRate / 10}/‰</span> */}
       </div>
     </div>
