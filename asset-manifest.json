@@ -47,8 +47,8 @@
     "static/js/22.28749a75.chunk.js": "/featuredao-interface/static/js/22.28749a75.chunk.js",
     "static/js/22.28749a75.chunk.js.map": "/featuredao-interface/static/js/22.28749a75.chunk.js.map",
     "main.css": "/featuredao-interface/static/css/main.1c208a31.chunk.css",
-    "main.js": "/featuredao-interface/static/js/main.d655e7a8.chunk.js",
-    "main.js.map": "/featuredao-interface/static/js/main.d655e7a8.chunk.js.map",
+    "main.js": "/featuredao-interface/static/js/main.e9ae03a6.chunk.js",
+    "main.js.map": "/featuredao-interface/static/js/main.e9ae03a6.chunk.js.map",
     "runtime-main.js": "/featuredao-interface/static/js/runtime-main.e4ab0485.js",
     "runtime-main.js.map": "/featuredao-interface/static/js/runtime-main.e4ab0485.js.map",
     "static/js/25.55fc5928.chunk.js": "/featuredao-interface/static/js/25.55fc5928.chunk.js",
@@ -220,6 +220,6 @@
     "static/js/runtime-main.e4ab0485.js",
     "static/js/25.55fc5928.chunk.js",
     "static/css/main.1c208a31.chunk.css",
-    "static/js/main.d655e7a8.chunk.js"
+    "static/js/main.e9ae03a6.chunk.js"
   ]
 }
