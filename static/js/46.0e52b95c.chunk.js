@@ -1,2 +1,0 @@
-(this["webpackJsonpfeature-interface"]=this["webpackJsonpfeature-interface"]||[]).push([[46,21,97],{843:function(n,e){},844:function(n,e){},846:function(n,e){},957:function(n,e){}}]);
-//# sourceMappingURL=46.0e52b95c.chunk.js.map
